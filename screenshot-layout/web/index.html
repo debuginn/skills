@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Screenshot Layout Builder</title>
+  <style>
+    :root {
+      --panel-bg: #f5f6f8;
+      --card-bg: #ffffff;
+      --text-main: #111111;
+      --text-sub: #5f6368;
+      --line: #e4e7ec;
+      --accent: #2f6bff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "SF Pro Display", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+      color: var(--text-main);
+    }
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 24px;
+      padding: 24px;
+    }
+    .panel {
+      background: var(--panel-bg);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+    .panel h1 {
+      margin: 0 0 4px;
+      font-size: 22px;
+    }
+    .panel p {
+      margin: 0 0 16px;
+      color: var(--text-sub);
+      font-size: 13px;
+    }
+    .field {
+      margin-bottom: 14px;
+    }
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: #353a40;
+    }
+    .field input[type="text"],
+    .field input[type="color"],
+    .field textarea,
+    .field select {
+      width: 100%;
+      border: 1px solid #d7dce3;
+      border-radius: 10px;
+      background: #fff;
+      font-size: 14px;
+      padding: 10px 12px;
+      outline: none;
+    }
+    .field textarea {
+      resize: vertical;
+      min-height: 68px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 92px 1fr auto;
+      gap: 8px;
+      align-items: center;
+    }
+    .pick-btn {
+      border: 1px solid #d7dce3;
+      background: #fff;
+      color: #1f2937;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .pick-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+    .btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .btn {
+      appearance: none;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-secondary {
+      background: #111827;
+      color: #fff;
+    }
+    .preview-wrap {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #preview {
+      width: min(78vh, 740px);
+      height: min(78vh, 740px);
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 14px;
+      border: 1px solid #dfe5ee;
+      background: #fff;
+      box-shadow: 0 14px 40px rgba(31, 41, 55, 0.14);
+    }
+    @media (max-width: 980px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+      #preview {
+        width: min(92vw, 720px);
+        height: min(92vw, 720px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="panel">
+      <h1>Screenshot Layout Builder</h1>
+      <p>上传截图、编辑文案、改背景色，实时预览并导出正方形宣传图。</p>
+
+      <div class="field">
+        <label for="imageInput">截图图片</label>
+        <input id="imageInput" type="file" accept="image/*" />
+      </div>
+
+      <div class="field">
+        <label for="titleInput">主标题（建议 2-4 字）</label>
+        <input id="titleInput" type="text" value="总览" />
+      </div>
+
+      <div class="field">
+        <label for="subtitleInput">副标题</label>
+        <textarea id="subtitleInput">清晰呈现你的资产全貌</textarea>
+      </div>
+
+      <div class="field">
+        <label for="bgInput">背景色</label>
+        <div class="row">
+          <input id="bgInput" type="color" value="#ffffff" />
+          <input id="bgHexInput" type="text" value="#ffffff" />
+          <button id="pickColorBtn" class="pick-btn" type="button">取色</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="gradientSelect">标题配色方案</label>
+        <select id="gradientSelect">
+          <option value="cool" selected>冷色炫彩</option>
+          <option value="warm">暖色炫彩</option>
+          <option value="ocean">海蓝渐变</option>
+          <option value="mono">深色单色</option>
+        </select>
+      </div>
+
+      <div class="btns">
+        <button id="loadSampleBtn" class="btn btn-secondary" type="button">加载示例图</button>
+        <button id="downloadBtn" class="btn btn-primary" type="button">导出 PNG</button>
+      </div>
+    </aside>
+
+    <main class="preview-wrap">
+      <canvas id="preview" width="1080" height="1080"></canvas>
+    </main>
+  </div>
+
+  <script>
+    const previewCanvas = document.getElementById("preview");
+    const ctx = previewCanvas.getContext("2d");
+
+    const imageInput = document.getElementById("imageInput");
+    const titleInput = document.getElementById("titleInput");
+    const subtitleInput = document.getElementById("subtitleInput");
+    const bgInput = document.getElementById("bgInput");
+    const bgHexInput = document.getElementById("bgHexInput");
+    const gradientSelect = document.getElementById("gradientSelect");
+    const pickColorBtn = document.getElementById("pickColorBtn");
+    const downloadBtn = document.getElementById("downloadBtn");
+    const loadSampleBtn = document.getElementById("loadSampleBtn");
+
+    let screenshotImage = null;
+
+    const gradients = {
+      cool: ["#4CC9F0", "#3A86FF", "#7B61FF", "#5EEAD4"],
+      warm: ["#FFB86B", "#FF8A65", "#FF5E7A", "#FF7CE5"],
+      ocean: ["#38BDF8", "#0EA5E9", "#2563EB", "#22D3EE"],
+      mono: ["#111827", "#1F2937", "#374151", "#111827"]
+    };
+
+    function fitRect(srcW, srcH, dstX, dstY, dstW, dstH) {
+      const srcRatio = srcW / srcH;
+      const dstRatio = dstW / dstH;
+      let drawW = dstW;
+      let drawH = dstH;
+      if (srcRatio > dstRatio) {
+        drawW = dstW;
+        drawH = dstW / srcRatio;
+      } else {
+        drawH = dstH;
+        drawW = dstH * srcRatio;
+      }
+      const x = dstX + (dstW - drawW) / 2;
+      const y = dstY + (dstH - drawH) / 2;
+      return { x, y, w: drawW, h: drawH };
+    }
+
+    function normalizeHex(value) {
+      const v = value.trim();
+      if (/^#[0-9a-fA-F]{6}$/.test(v)) return v.toLowerCase();
+      return null;
+    }
+
+    function drawRoundedClip(context, x, y, w, h, r) {
+      context.beginPath();
+      context.moveTo(x + r, y);
+      context.arcTo(x + w, y, x + w, y + h, r);
+      context.arcTo(x + w, y + h, x, y + h, r);
+      context.arcTo(x, y + h, x, y, r);
+      context.arcTo(x, y, x + w, y, r);
+      context.closePath();
+    }
+
+    function render() {
+      const bgColor = normalizeHex(bgHexInput.value) || "#ffffff";
+      bgInput.value = bgColor;
+
+      ctx.clearRect(0, 0, 1080, 1080);
+      ctx.fillStyle = bgColor;
+      ctx.fillRect(0, 0, 1080, 1080);
+
+      if (screenshotImage) {
+        const target = fitRect(
+          screenshotImage.width,
+          screenshotImage.height,
+          86, 96, 458, 900
+        );
+        ctx.save();
+        drawRoundedClip(ctx, 86, 96, 458, 900, 54);
+        ctx.clip();
+        ctx.drawImage(screenshotImage, target.x, target.y, target.w, target.h);
+        ctx.restore();
+      } else {
+        ctx.save();
+        ctx.fillStyle = "#eef2f7";
+        drawRoundedClip(ctx, 86, 96, 458, 900, 54);
+        ctx.fill();
+        ctx.fillStyle = "#9aa3af";
+        ctx.font = "600 28px SF Pro Display, PingFang SC, sans-serif";
+        ctx.fillText("上传截图", 238, 540);
+        ctx.restore();
+      }
+
+      const scheme = gradients[gradientSelect.value] || gradients.cool;
+      const titleGradient = ctx.createLinearGradient(612, 438, 850, 560);
+      titleGradient.addColorStop(0, scheme[0]);
+      titleGradient.addColorStop(0.34, scheme[1]);
+      titleGradient.addColorStop(0.68, scheme[2]);
+      titleGradient.addColorStop(1, scheme[3]);
+
+      const title = (titleInput.value || "总览").trim();
+      const subtitle = (subtitleInput.value || "").trim();
+
+      ctx.textAlign = "left";
+      ctx.textBaseline = "top";
+      ctx.fillStyle = titleGradient;
+      ctx.font = "700 110px SF Pro Display, PingFang SC, sans-serif";
+      ctx.fillText(title, 612, 438);
+
+      ctx.fillStyle = "#6e6e73";
+      ctx.font = "400 24px SF Pro Display, PingFang SC, sans-serif";
+      wrapText(ctx, subtitle, 612, 560, 400, 34);
+    }
+
+    function wrapText(context, text, x, y, maxWidth, lineHeight) {
+      if (!text) return;
+      const chars = [...text];
+      let line = "";
+      let drawY = y;
+      for (const ch of chars) {
+        const next = line + ch;
+        if (context.measureText(next).width > maxWidth && line) {
+          context.fillText(line, x, drawY);
+          line = ch;
+          drawY += lineHeight;
+        } else {
+          line = next;
+        }
+      }
+      if (line) context.fillText(line, x, drawY);
+    }
+
+    function readImage(file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const img = new Image();
+        img.onload = () => {
+          screenshotImage = img;
+          render();
+        };
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    imageInput.addEventListener("change", (event) => {
+      const [file] = event.target.files || [];
+      if (file) readImage(file);
+    });
+
+    [titleInput, subtitleInput, gradientSelect].forEach((el) => {
+      el.addEventListener("input", render);
+      el.addEventListener("change", render);
+    });
+
+    bgInput.addEventListener("input", () => {
+      bgHexInput.value = bgInput.value;
+      render();
+    });
+
+    bgHexInput.addEventListener("input", render);
+
+    if (!("EyeDropper" in window)) {
+      pickColorBtn.disabled = true;
+      pickColorBtn.title = "当前浏览器不支持取色器";
+    } else {
+      pickColorBtn.addEventListener("click", async () => {
+        try {
+          const eyeDropper = new EyeDropper();
+          const result = await eyeDropper.open();
+          if (result && result.sRGBHex) {
+            bgHexInput.value = result.sRGBHex.toLowerCase();
+            render();
+          }
+        } catch (error) {
+          // User cancel is expected; no UI noise needed.
+        }
+      });
+    }
+
+    downloadBtn.addEventListener("click", () => {
+      const link = document.createElement("a");
+      link.download = "screenshot-layout.png";
+      link.href = previewCanvas.toDataURL("image/png");
+      link.click();
+    });
+
+    loadSampleBtn.addEventListener("click", () => {
+      const img = new Image();
+      img.onload = () => {
+        screenshotImage = img;
+        render();
+      };
+      img.src = "../examples/IMG_0310_new.PNG";
+    });
+
+    render();
+  </script>
+</body>
+</html>

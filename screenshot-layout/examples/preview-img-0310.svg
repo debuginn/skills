@@ -1,0 +1,40 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
+
+  <rect x="70" y="70" width="940" height="940" rx="28" fill="#FFFFFF"/>
+
+  <rect x="112" y="140" width="430" height="800" rx="52" fill="#F7F7F7" stroke="#E8E8E8" stroke-width="2"/>
+  <image href="/Users/debuginn/Downloads/IMG_0310_new.PNG" x="127" y="155" width="400" height="770" preserveAspectRatio="xMidYMid meet"/>
+
+  <g transform="translate(612 280)">
+    <text x="0" y="0" fill="#111111" font-family="PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="74" font-weight="700">
+      资产总览
+    </text>
+    <text x="0" y="72" fill="#6B6B6B" font-family="PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="31" font-weight="400">
+      一眼看懂资产、负债与结构变化
+    </text>
+
+    <rect x="0" y="146" width="256" height="2" fill="#111111" fill-opacity="0.08"/>
+
+    <text x="0" y="238" fill="#111111" font-family="PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="600">
+      清晰的首页信息密度
+    </text>
+    <text x="0" y="290" fill="#7A7A7A" font-family="PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="400">
+      把资产、流向、目标和结构整合到同一屏
+    </text>
+
+    <text x="0" y="390" fill="#111111" font-family="PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="600">
+      深色界面更聚焦
+    </text>
+    <text x="0" y="442" fill="#7A7A7A" font-family="PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="400">
+      用图表强化层级，关键数字更容易被看到
+    </text>
+
+    <text x="0" y="542" fill="#111111" font-family="PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="600">
+      适合宣传图改版
+    </text>
+    <text x="0" y="594" fill="#7A7A7A" font-family="PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="400">
+      这版已经符合“左图右文案、白底、正方形”的基础结构
+    </text>
+  </g>
+</svg>
