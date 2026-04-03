@@ -15,8 +15,8 @@ A collection of reusable [Claude Code](https://claude.ai/code) skills published 
 /plugin marketplace add debuginn/skills
 
 # 2. Install skills
-/plugin install promoflow@debuginn-skills
-/plugin install noteflow@debuginn-skills
+/plugin install debuginn-promo@debuginn-skills
+/plugin install debuginn-note@debuginn-skills
 
 # 3. Reload to apply
 /reload-plugins
@@ -26,8 +26,8 @@ A collection of reusable [Claude Code](https://claude.ai/code) skills published 
 
 | Skill | Invoke | Description |
 |-------|--------|-------------|
-| [promoflow](./plugins/promoflow/skills/promoflow/SKILL.md) | `/promoflow:promoflow` | Turn an iPhone screenshot into a square promotional image (App Store style) with title and subtitle. Includes an interactive web editor for preview and PNG export. |
-| [noteflow](./plugins/noteflow/skills/noteflow/SKILL.md) | `/noteflow:noteflow` | Organize and summarize the current conversation into a structured Markdown document, preview inline, then save locally. Save directory is stored globally in `~/.config/noteflow/config.json`. |
+| [debuginn-promo](./plugins/debuginn-promo/skills/debuginn-promo/SKILL.md) | `/debuginn-promo:debuginn-promo` | Turn an iPhone screenshot into a square promotional image (App Store style) with title and subtitle. Includes an interactive web editor for preview and PNG export. |
+| [debuginn-note](./plugins/debuginn-note/skills/debuginn-note/SKILL.md) | `/debuginn-note:debuginn-note` | Organize and summarize the current conversation into a structured Markdown document, preview inline, then save locally. Save directory is stored globally in `~/.config/noteflow/config.json`. |
 
 ## Keeping up to date
 

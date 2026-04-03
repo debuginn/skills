@@ -1,5 +1,5 @@
 ---
-name: promoflow
+name: debuginn-promo
 description: Create or edit iPhone screenshot promo images into a square composition with a white background, the uploaded screenshot or graphic on the left, and a main title plus subtitle on the right. Use when the user wants App Store style marketing cards, square social covers, screenshot reframing, or wants an iPhone screenshot turned into a clean title-and-subtitle layout.
 ---
 
@@ -77,7 +77,7 @@ Use the web tool when the user wants quick customization and visual feedback.
 1. Start a local server in the skill root:
    `python3 -m http.server 8123`
 2. Open:
-   `http://127.0.0.1:8123/plugins/promoflow/skills/promoflow/web/index.html`
+   `http://127.0.0.1:8123/plugins/debuginn-promo/skills/debuginn-promo/web/index.html`
 3. Customize:
    - upload screenshot
    - edit title/subtitle

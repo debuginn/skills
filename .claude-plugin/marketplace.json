@@ -10,8 +10,8 @@
   },
   "plugins": [
     {
-      "name": "promoflow",
-      "source": "./plugins/promoflow",
+      "name": "debuginn-promo",
+      "source": "./plugins/debuginn-promo",
       "description": "Turn an iPhone screenshot into a square promotional image with title and subtitle, App Store style.",
       "version": "1.0.0",
       "author": {
@@ -23,8 +23,8 @@
       "keywords": ["promo", "screenshot", "marketing", "image"]
     },
     {
-      "name": "noteflow",
-      "source": "./plugins/noteflow",
+      "name": "debuginn-note",
+      "source": "./plugins/debuginn-note",
       "description": "Organize and summarize a conversation into a structured Markdown document and save it locally.",
       "version": "1.0.0",
       "author": {
