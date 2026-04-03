@@ -4,19 +4,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Purpose
 
-This is a **Claude Code skills repository** — a collection of reusable skill definitions that extend Claude Code's capabilities. Skills are invocable via `/skill-name` in Claude Code sessions.
+This is a **Claude Code plugin marketplace** — a collection of skills published under `debuginn/skills` and installable via the Claude Code plugin system.
 
-## Skill Structure
-
-Each skill lives in its own subdirectory and must contain a `SKILL.md` file with YAML frontmatter:
+## Plugin Marketplace Structure
 
 ```
-skill-name/
-  SKILL.md              # Required: skill definition with frontmatter
-  references/           # Optional: supporting spec/reference docs
-  assets/               # Optional: static assets (SVG, images)
-  examples/             # Optional: example outputs
-  web/                  # Optional: interactive web tools
+skills/
+  .claude-plugin/
+    marketplace.json          ← marketplace entry (lists all plugins)
+  plugins/
+    <plugin-name>/
+      .claude-plugin/
+        plugin.json           ← plugin manifest
+      skills/
+        <skill-name>/
+          SKILL.md            ← skill definition with YAML frontmatter
+          [supporting files]  ← references/, assets/, web/, examples/
 ```
 
 ### SKILL.md Frontmatter
@@ -24,22 +27,30 @@ skill-name/
 ```yaml
 ---
 name: skill-name
-description: One-sentence description — this is used by Claude Code to match user intent to the skill.
+description: One-sentence description — used by Claude Code to match user intent to the skill.
 ---
 ```
 
-The `description` field is critical: it determines when the skill is triggered. Make it precise and action-oriented.
+### marketplace.json
 
-## Web Tool Convention
+Lists all plugins under `plugins` array. Each entry requires `name`, `source` (relative path), and `description`.
 
-Skills with interactive web tools follow this pattern:
-- Tool lives at `skill-name/web/index.html`
-- Start a local server from the repo root: `python3 -m http.server 8123`
-- Access at: `http://127.0.0.1:8123/skill-name/web/index.html`
+### plugin.json
+
+Minimal required field: `name`. Recommended: `version`, `description`, `author`, `keywords`.
 
 ## Adding a New Skill
 
-1. Create a new directory at the repo root named after the skill.
-2. Write `SKILL.md` with frontmatter (`name`, `description`) and the full skill instructions.
-3. Add any supporting files (`references/`, `assets/`, `web/`) as needed.
-4. The skill is immediately usable — no build or registration step required.
+1. Create `plugins/<name>/.claude-plugin/plugin.json`
+2. Create `plugins/<name>/skills/<name>/SKILL.md`
+3. Add the plugin entry to `.claude-plugin/marketplace.json`
+4. Update README.md skills table
+
+## Web Tool Convention
+
+Skills with interactive web tools start a local server from the repo root:
+
+```bash
+python3 -m http.server 8123
+# access: http://127.0.0.1:8123/plugins/<name>/skills/<name>/web/index.html
+```

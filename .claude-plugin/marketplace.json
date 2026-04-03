@@ -1,0 +1,42 @@
+{
+  "name": "debuginn-skills",
+  "owner": {
+    "name": "debuginn",
+    "email": "idebuginn@gmail.com"
+  },
+  "metadata": {
+    "description": "A collection of reusable Claude Code skills by debuginn",
+    "version": "1.0.0",
+    "homepage": "https://github.com/debuginn/skills"
+  },
+  "plugins": [
+    {
+      "name": "promoflow",
+      "source": "./plugins/promoflow",
+      "description": "Turn an iPhone screenshot into a square promotional image with title and subtitle, App Store style.",
+      "version": "1.0.0",
+      "author": {
+        "name": "debuginn",
+        "email": "idebuginn@gmail.com"
+      },
+      "homepage": "https://github.com/debuginn/skills",
+      "repository": "https://github.com/debuginn/skills",
+      "license": "MIT",
+      "keywords": ["promo", "screenshot", "marketing", "image"]
+    },
+    {
+      "name": "noteflow",
+      "source": "./plugins/noteflow",
+      "description": "Organize and summarize a conversation into a structured Markdown document and save it locally.",
+      "version": "1.0.0",
+      "author": {
+        "name": "debuginn",
+        "email": "idebuginn@gmail.com"
+      },
+      "homepage": "https://github.com/debuginn/skills",
+      "repository": "https://github.com/debuginn/skills",
+      "license": "MIT",
+      "keywords": ["note", "markdown", "export", "conversation"]
+    }
+  ]
+}

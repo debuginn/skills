@@ -77,7 +77,7 @@ Use the web tool when the user wants quick customization and visual feedback.
 1. Start a local server in the skill root:
    `python3 -m http.server 8123`
 2. Open:
-   `http://127.0.0.1:8123/promoflow/web/index.html`
+   `http://127.0.0.1:8123/plugins/promoflow/skills/promoflow/web/index.html`
 3. Customize:
    - upload screenshot
    - edit title/subtitle

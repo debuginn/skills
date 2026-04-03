@@ -1,0 +1,13 @@
+{
+  "name": "noteflow",
+  "description": "Organize and summarize a conversation into a structured Markdown document and save it locally.",
+  "version": "1.0.0",
+  "author": {
+    "name": "debuginn",
+    "email": "idebuginn@gmail.com"
+  },
+  "homepage": "https://github.com/debuginn/skills",
+  "repository": "https://github.com/debuginn/skills",
+  "license": "MIT",
+  "keywords": ["note", "markdown", "export", "conversation"]
+}
