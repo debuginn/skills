@@ -1,6 +1,14 @@
 # debuginn-skills
 
-一个基于 [Claude Code](https://claude.ai/code) 插件市场发布的可复用 skill 合集。
+[English](./README.md) · [中文](./README.zh.md)
+
+[![GitHub Stars](https://img.shields.io/github/stars/debuginn/skills?style=flat-square&logo=github)](https://github.com/debuginn/skills/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/debuginn/skills?style=flat-square&logo=github)](https://github.com/debuginn/skills/forks)
+[![License](https://img.shields.io/github/license/debuginn/skills?style=flat-square)](./LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/debuginn/skills?style=flat-square)](https://github.com/debuginn/skills/commits/main)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-插件市场-blueviolet?style=flat-square)](https://claude.ai/code)
+
+基于 [Claude Code](https://claude.ai/code) 插件市场发布的可复用 skill 合集，安装一次，所有项目通用。
 
 ## 安装
 
@@ -16,9 +24,16 @@
 /reload-plugins
 ```
 
+## Skills
+
+| Skill | 调用方式 | 描述 |
+|-------|---------|------|
+| [promoflow](./plugins/promoflow/skills/promoflow/SKILL.md) | `/promoflow:promoflow` | 将 iPhone 截图制作成方形宣传图（App Store 风格），左侧截图、右侧标题副标题，内置 Web 编辑器支持预览和导出 PNG。 |
+| [noteflow](./plugins/noteflow/skills/noteflow/SKILL.md) | `/noteflow:noteflow` | 将当前对话整理归纳为结构化 Markdown 文档，inline 预览后保存到本地。保存目录全局记忆于 `~/.config/noteflow/config.json`，跨项目跨工具复用。 |
+
 ## 保持更新
 
-新 skill 发布后，开启自动更新以获取最新版本：
+开启自动更新，新 skill 发布后自动获取：
 
 ```bash
 /plugin marketplace auto-update debuginn-skills
@@ -31,9 +46,6 @@
 /reload-plugins
 ```
 
-## Skills
+## License
 
-| Skill | 调用方式 | 描述 |
-|-------|---------|------|
-| [promoflow](./plugins/promoflow/skills/promoflow/SKILL.md) | `/promoflow:promoflow` | 将 iPhone 截图制作成方形宣传图（App Store 风格），左侧截图、右侧标题副标题，内置 Web 编辑器支持预览和导出 PNG。 |
-| [noteflow](./plugins/noteflow/skills/noteflow/SKILL.md) | `/noteflow:noteflow` | 将当前对话整理归纳为结构化 Markdown 文档，inline 预览后保存到本地。保存目录全局记忆于 `~/.config/noteflow/config.json`，跨项目跨工具复用。 |
+[MIT](./LICENSE)
