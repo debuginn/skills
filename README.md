@@ -1,5 +1,7 @@
 # debuginn-skills
 
+[English](./README.md) · [中文](./README.zh.md)
+
 A collection of reusable [Claude Code](https://claude.ai/code) skills published as a plugin marketplace.
 
 ## Installation
