@@ -24,10 +24,10 @@ A collection of reusable [Claude Code](https://claude.ai/code) skills published 
 
 ## Skills
 
-| Skill | Invoke | Description |
-|-------|--------|-------------|
-| [debuginn-promo](./plugins/debuginn-promo/skills/debuginn-promo/SKILL.md) | `/debuginn-promo:debuginn-promo` | Turn an iPhone screenshot into a square promotional image (App Store style) with title and subtitle. Includes an interactive web editor for preview and PNG export. |
-| [debuginn-note](./plugins/debuginn-note/skills/debuginn-note/SKILL.md) | `/debuginn-note:debuginn-note` | Organize and summarize the current conversation into a structured Markdown document, preview inline, then save locally. Save directory is stored globally in `~/.config/noteflow/config.json`. |
+| Skill | Description |
+|-------|-------------|
+| [debuginn-promo](./plugins/debuginn-promo/skills/debuginn-promo/SKILL.md) | Turn an iPhone screenshot into a square promotional image (App Store style) with title and subtitle. Includes an interactive web editor for preview and PNG export. |
+| [debuginn-note](./plugins/debuginn-note/skills/debuginn-note/SKILL.md) | Organize and summarize the current conversation into a structured Markdown document, preview inline, then save locally. Save directory is stored globally in `~/.config/noteflow/config.json`. |
 
 ## Keeping up to date
 
