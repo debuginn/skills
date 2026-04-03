@@ -1,4 +1,4 @@
-# skills
+# debuginn-skills
 
 A collection of reusable [Claude Code](https://claude.ai/code) skills published as a plugin marketplace.
 
