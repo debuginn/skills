@@ -16,6 +16,21 @@ A collection of reusable [Claude Code](https://claude.ai/code) skills published 
 /reload-plugins
 ```
 
+## Keeping up to date
+
+新 skill 发布后，开启自动更新以获取最新版本：
+
+```bash
+/plugin marketplace auto-update debuginn-skills
+```
+
+或手动同步：
+
+```bash
+/plugin marketplace sync debuginn-skills
+/reload-plugins
+```
+
 ## Skills
 
 | Skill | Invoke | Description |
