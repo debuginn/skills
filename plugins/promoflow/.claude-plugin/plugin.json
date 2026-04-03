@@ -3,8 +3,7 @@
   "description": "Turn an iPhone screenshot into a square promotional image with title and subtitle, App Store style.",
   "version": "1.0.0",
   "author": {
-    "name": "debuginn",
-    "email": "idebuginn@gmail.com"
+    "name": "debuginn"
   },
   "homepage": "https://github.com/debuginn/skills",
   "repository": "https://github.com/debuginn/skills",

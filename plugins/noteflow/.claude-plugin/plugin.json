@@ -3,8 +3,7 @@
   "description": "Organize and summarize a conversation into a structured Markdown document and save it locally.",
   "version": "1.0.0",
   "author": {
-    "name": "debuginn",
-    "email": "idebuginn@gmail.com"
+    "name": "debuginn"
   },
   "homepage": "https://github.com/debuginn/skills",
   "repository": "https://github.com/debuginn/skills",
