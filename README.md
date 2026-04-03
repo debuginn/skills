@@ -2,8 +2,6 @@
 
 [English](./README.md) · [中文](./README.zh.md)
 
-[![GitHub Stars](https://img.shields.io/github/stars/debuginn/skills?style=flat-square&logo=github)](https://github.com/debuginn/skills/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/debuginn/skills?style=flat-square&logo=github)](https://github.com/debuginn/skills/forks)
 [![License](https://img.shields.io/github/license/debuginn/skills?style=flat-square)](./LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/debuginn/skills?style=flat-square)](https://github.com/debuginn/skills/commits/main)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Plugin%20Marketplace-blueviolet?style=flat-square)](https://claude.ai/code)
