@@ -17,6 +17,7 @@
 # 2. 安装 skill
 /plugin install debuginn-promo@debuginn-skills
 /plugin install debuginn-note@debuginn-skills
+/plugin install debuginn-skill-tool@debuginn-skills
 
 # 3. 重载生效
 /reload-plugins
@@ -28,6 +29,7 @@
 |-------|------|
 | [debuginn-promo](./plugins/debuginn-promo/skills/debuginn-promo/SKILL.md) | 将 iPhone 截图制作成方形宣传图（App Store 风格），左侧截图、右侧标题副标题，内置 Web 编辑器支持预览和导出 PNG。 |
 | [debuginn-note](./plugins/debuginn-note/skills/debuginn-note/SKILL.md) | 将当前对话整理归纳为结构化 Markdown 文档，inline 预览后保存到本地。保存目录全局记忆于 `~/.config/noteflow/config.json`，跨项目跨工具复用。 |
+| [debuginn-skill-tool](./plugins/debuginn-skill-tool/skills/debuginn-skill-tool/SKILL.md) | hugo-theme-skills 工具页引导创建器——根据用户描述生成 `.md` front matter、Hugo controls partial、canvas JS 和双主题 CSS，内置卡片可视化预览工具。 |
 
 ## 保持更新
 

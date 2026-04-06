@@ -17,6 +17,7 @@ A collection of reusable [Claude Code](https://claude.ai/code) skills published 
 # 2. Install skills
 /plugin install debuginn-promo@debuginn-skills
 /plugin install debuginn-note@debuginn-skills
+/plugin install debuginn-skill-tool@debuginn-skills
 
 # 3. Reload to apply
 /reload-plugins
@@ -28,6 +29,7 @@ A collection of reusable [Claude Code](https://claude.ai/code) skills published 
 |-------|-------------|
 | [debuginn-promo](./plugins/debuginn-promo/skills/debuginn-promo/SKILL.md) | Turn an iPhone screenshot into a square promotional image (App Store style) with title and subtitle. Includes an interactive web editor for preview and PNG export. |
 | [debuginn-note](./plugins/debuginn-note/skills/debuginn-note/SKILL.md) | Organize and summarize the current conversation into a structured Markdown document, preview inline, then save locally. Save directory is stored globally in `~/.config/noteflow/config.json`. |
+| [debuginn-skill-tool](./plugins/debuginn-skill-tool/skills/debuginn-skill-tool/SKILL.md) | Guided builder for hugo-theme-skills tool pages — generates `.md` front matter, Hugo controls partial, canvas JS, and dual-theme CSS for a new skill. Includes an interactive web card previewer. |
 
 ## Keeping up to date
 

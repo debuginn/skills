@@ -1,0 +1,10 @@
+{
+  "name": "debuginn-skill-tool",
+  "description": "Guided skill builder for hugo-theme-skills — generates .md, controls partial, JS, and CSS files for a new tool page.",
+  "version": "1.0.0",
+  "author": { "name": "debuginn" },
+  "homepage": "https://github.com/debuginn/skills",
+  "repository": "https://github.com/debuginn/skills",
+  "license": "MIT",
+  "keywords": ["hugo", "skill", "builder", "canvas", "tool", "hugo-theme-skills"]
+}

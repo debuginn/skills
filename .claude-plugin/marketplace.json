@@ -23,6 +23,19 @@
       "keywords": ["promo", "screenshot", "marketing", "image"]
     },
     {
+      "name": "debuginn-skill-tool",
+      "source": "./plugins/debuginn-skill-tool",
+      "description": "Guided builder for hugo-theme-skills tool pages — generates .md front matter, Hugo controls partial, canvas JS, and dual-theme CSS for a new skill.",
+      "version": "1.0.0",
+      "author": {
+        "name": "debuginn"
+      },
+      "homepage": "https://github.com/debuginn/skills",
+      "repository": "https://github.com/debuginn/skills",
+      "license": "MIT",
+      "keywords": ["hugo", "skill", "builder", "canvas", "tool", "hugo-theme-skills"]
+    },
+    {
       "name": "debuginn-note",
       "source": "./plugins/debuginn-note",
       "description": "Organize and summarize a conversation into a structured Markdown document and save it locally.",
