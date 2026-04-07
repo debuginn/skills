@@ -3,7 +3,7 @@ name: debuginn-note
 description: Organize and summarize the current conversation into a structured Markdown document, preview it inline, then save to a user-specified directory with global memory. Use when the user wants to export, archive, or document the current conversation as a clean Markdown note.
 ---
 
-# Noteflow — Conversation to Markdown
+# debuginn-note — Conversation to Markdown
 
 Use this skill when the user wants to turn the current conversation into a clean, structured Markdown document and save it to disk.
 
@@ -41,10 +41,10 @@ Ask the user:
 
 ### Step 3 — Determine save directory
 
-Read the global config file `~/.config/noteflow/config.json`:
+Read the global config file `~/.config/debuginn-note/config.json`:
 
 ```bash
-cat ~/.config/noteflow/config.json
+cat ~/.config/debuginn-note/config.json
 ```
 
 - **Config exists and has `save_dir`**: show it to the user:
@@ -99,7 +99,7 @@ After a successful save, write the directory to the shared config file:
 
 1. **Create directory if needed**:
    ```bash
-   mkdir -p ~/.config/noteflow
+   mkdir -p ~/.config/debuginn-note
    ```
 
 2. **Write config** (preserve any existing keys, only update `save_dir`):
@@ -108,18 +108,18 @@ After a successful save, write the directory to the shared config file:
      "save_dir": "{dir}"
    }
    ```
-   Write to `~/.config/noteflow/config.json`.
+   Write to `~/.config/debuginn-note/config.json`.
 
 3. **Also save a Claude memory reference** (so Claude can locate the config quickly):
    - Write to `~/.claude/projects/-/memory/debuginn-note.md`:
      ```markdown
      ---
      name: debuginn-note
-     description: Noteflow global config path and save directory reference.
+     description: debuginn-note global config path and save directory reference.
      type: reference
      ---
 
-     Config file: `~/.config/noteflow/config.json`  
+     Config file: `~/.config/debuginn-note/config.json`  
      Current save_dir: `{dir}`
 
      **How to apply:** Always read the config file first; treat this memory as a fast-path cache only.
@@ -160,7 +160,7 @@ When the user wants to edit the document after preview (Step 2) or after saving:
 ## Notes
 
 - Always preview before saving — never write to disk without user confirmation.
-- `~/.config/noteflow/config.json` is the single source of truth for save directory — tool-agnostic, readable by any editor, script, or AI tool.
+- `~/.config/debuginn-note/config.json` is the single source of truth for save directory — tool-agnostic, readable by any editor, script, or AI tool.
 - Claude memory at `~/.claude/projects/-/memory/debuginn-note.md` is a fast-path pointer only; always re-read the config file to get the current value.
 - Use absolute paths when saving files; expand `~` to the actual home directory.
-- If `~/.config/noteflow/` does not exist, create it before writing the config.
+- If `~/.config/debuginn-note/` does not exist, create it before writing the config.
