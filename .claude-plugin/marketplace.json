@@ -10,9 +10,9 @@
   },
   "plugins": [
     {
-      "name": "debuginn-promo",
-      "source": "./plugins/debuginn-promo",
-      "description": "Turn an iPhone screenshot into a square promotional image with title and subtitle, App Store style.",
+      "name": "debuginn-wx-xhs-poster",
+      "source": "./plugins/debuginn-wx-xhs-poster",
+      "description": "Turn a screenshot into a square promotional image for WeChat or Xiaohongshu, using an interactive web tool.",
       "version": "1.0.0",
       "author": {
         "name": "debuginn"
@@ -20,7 +20,7 @@
       "homepage": "https://github.com/debuginn/skills",
       "repository": "https://github.com/debuginn/skills",
       "license": "MIT",
-      "keywords": ["promo", "screenshot", "marketing", "image"]
+      "keywords": ["promo", "screenshot", "wechat", "xiaohongshu", "poster", "marketing", "image"]
     },
     {
       "name": "debuginn-skill-tool",

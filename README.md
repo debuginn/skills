@@ -15,7 +15,7 @@ A collection of reusable [Claude Code](https://claude.ai/code) skills published 
 /plugin marketplace add debuginn/skills
 
 # 2. Install skills
-/plugin install debuginn-promo@debuginn-skills
+/plugin install debuginn-wx-xhs-poster@debuginn-skills
 /plugin install debuginn-note@debuginn-skills
 /plugin install debuginn-skill-tool@debuginn-skills
 
@@ -27,7 +27,7 @@ A collection of reusable [Claude Code](https://claude.ai/code) skills published 
 
 | Skill | Description |
 |-------|-------------|
-| [debuginn-promo](./plugins/debuginn-promo/skills/debuginn-promo/SKILL.md) | Turn an iPhone screenshot into a square promotional image (App Store style) with title and subtitle. Includes an interactive web editor for preview and PNG export. |
+| [debuginn-wx-xhs-poster](./plugins/debuginn-wx-xhs-poster/skills/debuginn-wx-xhs-poster/SKILL.md) | Turn a screenshot into a square promotional image for WeChat or Xiaohongshu. Guides you through the interactive web tool with title, subtitle, color scheme, and aspect ratio selection. |
 | [debuginn-note](./plugins/debuginn-note/skills/debuginn-note/SKILL.md) | Organize and summarize the current conversation into a structured Markdown document, preview inline, then save locally. Save directory is stored globally in `~/.config/noteflow/config.json`. |
 | [debuginn-skill-tool](./plugins/debuginn-skill-tool/skills/debuginn-skill-tool/SKILL.md) | Guided builder for hugo-theme-skills tool pages — generates `.md` front matter, Hugo controls partial, canvas JS, and dual-theme CSS for a new skill. Includes an interactive web card previewer. |
 

@@ -1,0 +1,12 @@
+{
+  "name": "debuginn-wx-xhs-poster",
+  "description": "Turn a screenshot into a square promotional image for WeChat or Xiaohongshu, using an interactive web tool.",
+  "version": "1.0.0",
+  "author": {
+    "name": "debuginn"
+  },
+  "homepage": "https://github.com/debuginn/skills",
+  "repository": "https://github.com/debuginn/skills",
+  "license": "MIT",
+  "keywords": ["promo", "screenshot", "wechat", "xiaohongshu", "poster", "marketing", "image"]
+}
