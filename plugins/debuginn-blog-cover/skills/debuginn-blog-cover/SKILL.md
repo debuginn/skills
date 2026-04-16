@@ -14,7 +14,7 @@ Use this skill when the user wants to generate a 16:9 blog hero cover image with
 Ask the user in a natural conversational flow (do not dump a form):
 
 1. **Title**: the text displayed large on the cover. Suggest one if the user is unsure (see copy guidance below).
-2. **Logo / center image** (optional): a path to an image to place in the center. Can be omitted for a text-only cover.
+2. **Logo / center image**: a path to an image to place in the center. This is required — ask for it explicitly.
 
 ### Step 2 — Confirm optional style preferences
 
