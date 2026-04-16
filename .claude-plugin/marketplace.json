@@ -12,41 +12,17 @@
     {
       "name": "debuginn-wx-xhs-poster",
       "source": "./plugins/debuginn-wx-xhs-poster",
-      "description": "Turn a screenshot into a square promotional image for WeChat or Xiaohongshu, using an interactive web tool.",
-      "version": "1.0.0",
-      "author": {
-        "name": "debuginn"
-      },
-      "homepage": "https://github.com/debuginn/skills",
-      "repository": "https://github.com/debuginn/skills",
-      "license": "MIT",
-      "keywords": ["promo", "screenshot", "wechat", "xiaohongshu", "poster", "marketing", "image"]
+      "description": "Turn a screenshot into a square promotional image for WeChat or Xiaohongshu, using an interactive web tool."
     },
     {
       "name": "debuginn-skill-tool",
       "source": "./plugins/debuginn-skill-tool",
-      "description": "Guided builder for hugo-theme-skills tool pages — generates .md front matter, Hugo controls partial, canvas JS, and dual-theme CSS for a new skill.",
-      "version": "1.0.0",
-      "author": {
-        "name": "debuginn"
-      },
-      "homepage": "https://github.com/debuginn/skills",
-      "repository": "https://github.com/debuginn/skills",
-      "license": "MIT",
-      "keywords": ["hugo", "skill", "builder", "canvas", "tool", "hugo-theme-skills"]
+      "description": "Guided builder for hugo-theme-skills tool pages — generates .md front matter, Hugo controls partial, canvas JS, and dual-theme CSS for a new skill."
     },
     {
       "name": "debuginn-note",
       "source": "./plugins/debuginn-note",
-      "description": "Organize and summarize a conversation into a structured Markdown document and save it locally.",
-      "version": "1.0.0",
-      "author": {
-        "name": "debuginn"
-      },
-      "homepage": "https://github.com/debuginn/skills",
-      "repository": "https://github.com/debuginn/skills",
-      "license": "MIT",
-      "keywords": ["note", "markdown", "export", "conversation"]
+      "description": "Organize and summarize a conversation into a structured Markdown document and save it locally."
     }
   ]
 }
