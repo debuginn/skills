@@ -23,6 +23,11 @@
       "name": "debuginn-note",
       "source": "./plugins/debuginn-note",
       "description": "Organize and summarize a conversation into a structured Markdown document and save it locally."
+    },
+    {
+      "name": "debuginn-blog-cover",
+      "source": "./plugins/debuginn-blog-cover",
+      "description": "Generate a 16:9 blog hero cover with title, center logo, accent color and glow effect."
     }
   ]
 }
