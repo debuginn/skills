@@ -62,17 +62,19 @@ function parseArgs(argv) {
     else if (argv[i] === '--glow')     a.glow       = parseInt(argv[++i], 10);
     else if (argv[i] === '--tracking') a.tracking   = parseInt(argv[++i], 10);
     else if (argv[i] === '--output')   a.output     = argv[++i];
+    else if (argv[i] === '--scale')    a.scale      = parseInt(argv[++i], 10);
   }
   return a;
 }
 
 async function main() {
   var args = parseArgs(process.argv.slice(2));
-  var canvas = createCanvas(COVER_SIZE.width, COVER_SIZE.height);
+  var scale = args.scale || 2;
+  var canvas = createCanvas(COVER_SIZE.width * scale, COVER_SIZE.height * scale);
   var ctx = canvas.getContext('2d');
   var img = args.image ? await loadImage(path.resolve(args.image)) : null;
   applyDrawingQuality(ctx);
-  drawCover(ctx, {
+  drawCover(ctx, scale, {
     title: args.title || 'BLOG',
     accentColor: args.accent || '#3a66ff',
     glowStrength: typeof args.glow === 'number' ? args.glow : 68,
@@ -113,7 +115,7 @@ node render.js \
 rm -rf "$TMPDIR"
 ```
 
-The output is a 1600x900 PNG saved to the specified path. Show the resulting image to the user.
+The output is a 2x high-resolution PNG (3200x1800) saved to the specified path. Show the resulting image to the user.
 
 ### Step 4 — Iterate if needed
 
