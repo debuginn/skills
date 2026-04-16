@@ -84,7 +84,7 @@ async function main() {
     title: args.title || '总览',
     subtitle: args.subtitle || ''
   });
-  var outPath = path.resolve(args.output || './poster.png');
+  var outPath = path.resolve(args.output || './debuginn-wx-xhs-poster-' + Date.now() + '.png');
   fs.writeFileSync(outPath, canvas.toBuffer('image/png'));
   console.log(outPath);
 }
